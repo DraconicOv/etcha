@@ -51,7 +51,16 @@
                 container.appendChild(row);
             }
         }
-
+        const button = document.createElement('button');
+        button.textContent = 'Create new Grid';
+        document.body.appendChild(button);
+        createGrid(16);
+        button.onclick = function() {
+            const size = prompt('Enter the size of the grid (Max 100)');
+            const container = document.querySelector('.container');
+            document.body.removeChild(container);
+            createGrid(size < 100 ? size : 100);
+        }
     </script>
 </body>
 </html>
